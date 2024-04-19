@@ -1,17 +1,21 @@
 [
   {
+    "remote": "lineage",
     "repository": "android_kernel_sony_sdm660",
     "target_path": "kernel/sony/sdm660"
   },
   {
+    "remote": "lineage",
     "repository": "android_hardware_sony_macaddrsetup",
     "target_path": "hardware/sony/macaddrsetup"
   },
   {
+    "remote": "lineage",
     "repository": "android_hardware_sony_simdetect",
     "target_path": "hardware/sony/simdetect"
   },
   {
+    "remote": "lineage",
     "repository": "android_hardware_sony_SonyOpenTelephony",
     "target_path": "hardware/sony/SonyOpenTelephony"
   }
