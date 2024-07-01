@@ -154,9 +154,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
-SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
-
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
@@ -168,6 +165,10 @@ BOARD_HAS_QCA_FM_SOC := "cherokee"
 BOARD_HAVE_QCOM_FM := true
 
 # HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+    $(VENDOR_PATH)/framework_compatibility_matrix.xml \
+    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
+    vendor/lmodroid/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 

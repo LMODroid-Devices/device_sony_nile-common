@@ -171,6 +171,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
+# Configstore
+PRODUCT_PACKAGES += \
+    disable_configstore
+
 # Display
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
@@ -214,10 +218,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-# For config.fs
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
@@ -236,8 +236,8 @@ PRODUCT_COPY_FILES += \
 
 # Healthd
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -262,13 +262,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# # Keymaster
+# Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0.vendor
+    android.hardware.keymaster@4.0.vendor \
+    libion.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.nile
+    android.hardware.light-service.nile
 
 # Lineage Health
 PRODUCT_PACKAGES += \
@@ -305,7 +306,8 @@ endif
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
-    libandroid_net
+    libandroid_net \
+    libnetutils.vendor:64
 
 # Netd
 PRODUCT_PACKAGES += \
@@ -349,6 +351,7 @@ PRODUCT_COPY_FILES += \
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
+    libsqlite.vendor:64 \
     libqti_vndfwk_detect.vendor
 
 # QNS
@@ -384,7 +387,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@1.0-impl:64 \
-    android.hardware.sensors@1.0-service
+    android.hardware.sensors@1.0-service \
+    libpower.vendor
 
 # SimDetect
 PRODUCT_PACKAGES += \
@@ -426,8 +430,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+    vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_PACKAGES += \
